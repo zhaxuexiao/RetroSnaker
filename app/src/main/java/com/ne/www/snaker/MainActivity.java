@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(MainActivity.this, "game over", Toast.LENGTH_SHORT).show();
                 isOver = false;
             }else {
-                snaker2.invalidate();
+                snaker2.invalidate(); //强制刷新画布
             }
         }
     };
@@ -39,8 +39,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);  //引用父类的方法
         setContentView(R.layout.activity_main);
-        DisplayMetrics metrics = new DisplayMetrics();
-        getWindowManager().getDefaultDisplay().getMetrics(metrics);
+        DisplayMetrics metrics = new DisplayMetrics(); //获取屏幕对象
+        getWindowManager().getDefaultDisplay().getMetrics(metrics);  //屏幕尺寸
         Snaker. width = metrics.widthPixels;
         Snaker. height = metrics.heightPixels;
         log("width："+Snaker.width+",height:"+Snaker.height);
@@ -49,7 +49,6 @@ public class MainActivity extends AppCompatActivity {
         liner = (LinearLayout)findViewById(R.id.liner);
 //        LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(30, 30);
         liner.addView(snaker2);
-//        snaker2.setLayoutParams(layoutParams);
         log("getWidth:" + snaker2.getWidth() + ",getHeight:" + snaker2.getHeight());
 
         snaker.setText("我是一条蛇");
