@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
         public void handleMessage(Message msg) {
             super.handleMessage(msg);
             log("msg.what:"+msg.what+",snaker2.getWidth():"+snaker2.getWidth()+",getHeight:"+snaker2.getHeight());
-            if (snaker2.curX >= Snaker.width || snaker2.curY + 60 >= Snaker.height ||snaker2.curX <= 0){
+            if (snaker2.curX >= Snaker.width || snaker2.curY + 60 >= Snaker.height ||snaker2.curX < 0){
                 Toast.makeText(MainActivity.this, "game over", Toast.LENGTH_SHORT).show();
                 isOver = false;
             }else {

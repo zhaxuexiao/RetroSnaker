@@ -7,12 +7,17 @@ package com.ne.www.snaker;
 public class SnakerBody {
     public int x = 0;
     public int y = 0;
+    public boolean isHeader;  //头
+    public boolean isLast; //尾
+
 
     @Override
     public String toString() {
         return "SnakerBody{" +
                 "x=" + x +
                 ", y=" + y +
+                ", isHeader=" + isHeader +
+                ", isLast=" + isLast +
                 '}';
     }
 }
